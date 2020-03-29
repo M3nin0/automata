@@ -280,11 +280,122 @@ pre[data-line] .line-highlight[data-end]:after {
 <div align="center">
     <img src="figuras/lista_2/exe_5_afnd.jpg">
 </div>
+<ol start="3">
+<li>Mostre  a  seq&#xFC;&#xEA;ncia  de  configura&#xE7;&#xF5;es  assumidas  pelo  AFD  abaixo  durante  a  an&#xE1;lise  das  cadeias  <code>abcdabc</code> e <code>abdabcd</code>. Determine se essas cadeias pertencem ou n&#xE3;o a linguagem reconhecida pelo AFD.</li>
+</ol>
+<p>M = ({ q0, q1, q2, q3}, { a, b, c, d }, &#x3B4;, q0, {q3})</p>
+<p>&#x3B4;(q0, a) = q1<br>
+&#x3B4;(q1, b) = q2<br>
+&#x3B4;(q2, c) = q3<br>
+&#x3B4;(q3, c) = q3<br>
+&#x3B4;(q3, d) = q0</p>
+<p>Para facilitar o entendimento dos passos realizados pelo AFD, fa&#xE7;amos a representa&#xE7;&#xE3;o visual atrav&#xE9;s de um grafo direcionado</p>
+<div align="center">
+    <img src="figuras/lista_2/exe_6_afd.jpg">
+</div>
+<p>Com a visualiza&#xE7;&#xE3;o do aut&#xF4;mato, &#xE9; poss&#xED;vel verificar qual ser&#xE1; aceita e qual n&#xE3;o ser&#xE1;. Desta forma temos que:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Cadeia de entrada</th>
+<th style="text-align:center">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">abcdabc</td>
+<td style="text-align:center">Reconhecido</td>
+</tr>
+<tr>
+<td style="text-align:center">abdabcd</td>
+<td style="text-align:center">N&#xE3;o Reconhecido</td>
+</tr>
+</tbody>
+</table>
+<p>Para entender melhor como cada um dos comportamento foi obtidos, vejamos os passos realizados pelo aut&#xF4;mato.</p>
+<ul>
+<li>Para a cadeia <code>abcdabc</code></li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_6_trace_accept.png">
+</div>
+<ul>
+<li>Para a cadeia <code>abdabcd</code></li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_6_trace_reject.PNG">
+</div>
+<ol start="4">
+<li>Considere a Gram&#xE1;tica Linear &#xE0; Direita, G = ({S, A, B}, {a,b}, P, S), onde P &#xE9; dado por</li>
+</ol>
+<p>P = { S &#x2192; aA, A &#x2192; bB, B &#x2192; cC, C &#x2192; c}</p>
+<p>Mostre 5 cadeias geradas por G. Encontre o Aut&#xF4;mato Finito M = {Q, {a, b}, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3B4;</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03785em;">&#x3B4;</span></span></span></span>, S, F} que reconhece a linguagem gerada por G.</p>
+<ul>
+<li>Produ&#xE7;&#xF5;es
+<ul>
+<li>abbba</li>
+<li>abba</li>
+<li>aa</li>
+<li>aaaa</li>
+<li>abbbaa</li>
+</ul>
+</li>
+</ul>
+<p>As produ&#xE7;&#xF5;es desta gram&#xE1;tica sempre come&#xE7;am e terminam com <code>a</code>.</p>
+<ul>
+<li>Aut&#xF4;mato para reconhecer a linguagem gerada por esta gram&#xE1;tica</li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_7_afnd.jpg">
+</div>
+<ol start="5">
+<li>Considere a Gram&#xE1;tica Linear &#xE0; Direita, G = ({S, X, Y}, {a,b,c}, P, S), onde P &#xE9; dado por</li>
+</ol>
+<p>P = { S &#x2192; aX | &#x3BB;, X &#x2192; bX | bbY | c, Y &#x2192; cY | cc | abc | &#x3BB;}</p>
+<p>Mostre 5 cadeias geradas por G. Encontre o Aut&#xF4;mato Finito M = {Q, {a,b,c}, &#x3B4; , S, F} que reconhece a linguagem gerada por G</p>
+<ul>
+<li>
+<p>Produ&#xE7;&#xF5;es</p>
+<ul>
+<li>abc</li>
+<li>abbccc</li>
+<li>abbbabc</li>
+<li>abbcc</li>
+<li>ac</li>
+</ul>
+</li>
+<li>
+<p>Aut&#xF4;mato para reconhecer a linguagem gerada por esta gram&#xE1;tica</p>
+</li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_8_afd_rg.jpg">
+</div>
+<ul>
+<li>Considera&#xE7;&#xE3;o sobre o tipo de linguagem.</li>
+</ul>
+<p>No exerc&#xED;cio original h&#xE1; uma pequena regra de produ&#xE7;&#xE3;o que altera o tipo da gram&#xE1;tica</p>
+<p>Para o exerc&#xED;cio original as seguintes regras de produ&#xE7;&#xE3;o eram consideradas<br>
+P = { S &#x2192; aX | &#x3BB;, X &#x2192; bX | bbY | c, Y &#x2192; Yc | cc | abc | &#x3BB;}</p>
+<p>Por&#xE9;m se for observado atentamente, a produ&#xE7;&#xE3;o Y &#x2192; Yc &#xE9; linear &#xE0; esquerda, enquanto todas as demais s&#xE3;o lineares a direita, o que faz esta n&#xE3;o ser uma linguagem regular, somente livre de contexto.</p>
+<p>Ent&#xE3;o para se adequar ao contexto dos exerc&#xED;cios a regra foi alterada, gerando a seguinte.</p>
+<p>P = { S &#x2192; aX | &#x3BB;, X &#x2192; bX | bbY | c, Y &#x2192; cY | cc | abc | &#x3BB;}</p>
+<p>Por conta de cursiosidade sobre como ficaria a forma de produ&#xE7;&#xE3;o dessas regras com essa mudan&#xE7;a, gerei uma produ&#xE7;&#xE3;o de cada uma no JFlap.</p>
+<p>Para a gram&#xE1;tica livre de contexto, a produ&#xE7;&#xE3;o teria esta apar&#xEA;ncia</p>
+<div align="center">
+    <img src="figuras/lista_2/exe_8_grammar_cfg.jpg">
+</div>
+<p>Para a gram&#xE1;tica regular, a produ&#xE7;&#xE3;o fica parecido com o que foi apresentado no exerc&#xED;cio, como pode ser visto abaixo.</p>
+<div align="center">
+    <img src="figuras/lista_2/exe_8_grammar_rg.jpg">
+</div>
+<p>Isto n&#xE3;o mudaria muito a linguagem gerada pela gram&#xE1;tica, pelo menos nos testes feitos durante o exerc&#xED;cio, por&#xE9;m para outras cadeias n&#xE3;o testadas comportamentos diferentes poderiam ser gerados.</p>
 <p><strong>Sobre os exerc&#xED;cios</strong>: Os exerc&#xED;cios presentes nesta p&#xE1;gina foram retirados das seguintes refer&#xEA;ncias:</p>
 <ul>
 <li><a href="http://www.din.uem.br/yandre/TC/lista3-resp.pdf">Lista de exerc&#xED;cios - UEM</a>;</li>
 <li><a href="http://wwwp.fc.unesp.br/~simonedp/zipados/Lista-TC02.pdf">Lista de exerc&#xED;cios - UNESP</a></li>
 </ul>
+<p><strong>Software utilizado</strong>: Os exerc&#xED;cios acima foram desenvolvidos e validados com o aux&#xED;lio do <a href="http://www.jflap.org/jflaptmp/">JFlap</a></p>
 
       </div>
       
