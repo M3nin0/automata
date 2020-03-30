@@ -317,6 +317,28 @@ O AFD apresentado na tabela pode ser visualizado no grafo abaixo.
     <img src="figuras/lista_2/exe_12_afd.jpg">
 </div>
 
+**10) Construir um AFN que aceita a linguagem associada às seguintes ER:**
+
+- a) r  = a* (a a + b b)
+
+<div align="center">
+    <img src="figuras/lista_2/exe_13a_afnd.jff.jpg">
+</div>
+
+- b) r = (a + b)* (a + b b)
+
+*Este autômato precisa ser otimizado, mas por hora, ele é capaz de interpretar a mesma cadeia que a expressão regular representa*
+
+<div align="center">
+    <img src="figuras/lista_2/exe_13b_afnd.jpg">
+</div>
+
+- c) r = (a a) * (b b )* b
+
+<div align="center">
+    <img src="figuras/lista_2/exe_13c_afnd.jpg">
+</div>
+
 **Sobre os exercícios**: Os exercícios presentes nesta página foram retirados das seguintes referências:
 - [Lista de exercícios - UEM](http://www.din.uem.br/yandre/TC/lista3-resp.pdf);
 - [Lista de exercícios - UNESP](http://wwwp.fc.unesp.br/~simonedp/zipados/Lista-TC02.pdf)
