@@ -140,6 +140,43 @@ Para a gramática regular, a produção fica parecido com o que foi apresentado 
 
 Isto não mudaria muito a linguagem gerada pela gramática, pelo menos nos testes feitos durante o exercício, porém para outras cadeias não testadas comportamentos diferentes poderiam ser gerados.
 
+6) Considere  o  Autômato  Finito  M  que  reconhece  a  Linguagem  L  =  {w  |  w  possui  aa  ou  bb  como  subcadeia}, então M  = { {q0, q1, q2, q3}, {a,b}, δ , q0, {q3}}
+
+|   δ   |   a   | b     |
+|:-----:|:-----:|-------|
+| $q_0$ | $q_1$ | $q_2$ |
+| $q_1$ | $q_3$ | $q_2$ |
+| $q_2$ | $q_1$ | $q_3$ |
+| $q_3$ | $q_3$ | $q_3$ |
+
+Encontre a Gramática  G = (V, {a,b}, P, S) que reconhece a linguagem gerada por G
+
+* Visualizando o autômato da tabela
+
+Para facilitar o processo de visualização do autômato presente na tabela, uma representação gráfica do mesmo, criada com grafos direcionados, foi feita.
+
+<div align="center">
+    <img src="figuras/lista_2/exe_9_afd.jpg">
+</div>
+
+* Geração da gramática
+
+A gramatica definida foi G = { {A, B, C}, {a, b}, P, S }, sendo as produções de P descritas na Figura abaixo
+
+<div align="center">
+    <img src="figuras/lista_2/exe_9_grammar_rg.jpg">
+</div>
+
+Com estas produções é possível reconhecer a mesma linguagem do autômato definido pelo exercício, fazendo com que $L(A) = L(G)$.
+
+* Validando as produções
+
+Para testar, uma cadeia aceita pelo autômato definido no exercício foi testado com o JFlap, o resultado pode ser visto na Figura abaixo.
+
+<div align="center">
+    <img src="figuras/lista_2/exe_9_grammar_rg_prod.jpg">
+</div>
+
 **Sobre os exercícios**: Os exercícios presentes nesta página foram retirados das seguintes referências:
 - [Lista de exercícios - UEM](http://www.din.uem.br/yandre/TC/lista3-resp.pdf);
 - [Lista de exercícios - UNESP](http://wwwp.fc.unesp.br/~simonedp/zipados/Lista-TC02.pdf)
