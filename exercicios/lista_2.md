@@ -339,6 +339,28 @@ O AFD apresentado na tabela pode ser visualizado no grafo abaixo.
     <img src="figuras/lista_2/exe_13c_afnd.jpg">
 </div>
 
+**11) Construa a Expressão Regular (ER) que represente as linguagens sobre Σ = {a, b, c, d}**
+
+- a) {w | w possui no mínimo um símbolo a}
+
+```
+(a+b+c+d)*a(a+b+c+d)*
+```
+
+Para a criação da expressão regular a seguinte ideia foi utilizada. O valor de `a` deve estar presente na cadeia reconhecida pela ER, então, um fecho transitivo reflexivo foi utilizado antes e depois do caractere `a`, isto permite que, antes dele possa vir qualquer elemento, inclusive nenhum, e após também.
+
+- b) {w | w possui exatamente dois símbolos a}
+
+```
+(b+c+d+e)*a(b+c+d+e)*a(b+c+d+e)*
+```
+
+Para a solução deste exercício a mesma lógica aplicada no exercício `a` foi utilizada.
+
+- c) {w | w possui um número par de símbolos a}
+
+
+
 **Sobre os exercícios**: Os exercícios presentes nesta página foram retirados das seguintes referências:
 - [Lista de exercícios - UEM](http://www.din.uem.br/yandre/TC/lista3-resp.pdf);
 - [Lista de exercícios - UNESP](http://wwwp.fc.unesp.br/~simonedp/zipados/Lista-TC02.pdf)
