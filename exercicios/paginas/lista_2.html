@@ -447,6 +447,287 @@ P = { S &#x2192; aX | &#x3BB;, X &#x2192; bX | bbY | c, Y &#x2192; Yc | cc | abc
 <div align="center">
     <img src="figuras/lista_2/exe_9_grammar_rg_prod.jpg">
 </div>
+<ol start="7">
+<li>Mostre a seq&#xFC;&#xEA;ncia de configura&#xE7;&#xF5;es assumidas pelo AFD abaixo durante a an&#xE1;lise das cadeias <code>abbca</code> e <code>abaac</code>. Determine se essas cadeias pertencem ou n&#xE3;o a linguagem reconhecida pelo AFD</li>
+</ol>
+<p>Considere o aut&#xF4;mato M = ({q0, q1}, { a, b, c }, &#x3B4;, q0, {q1}), onde &#x3B4; &#xE9;</p>
+<p>&#x3B4;(q0, a) = q1<br>
+&#x3B4;(q1, b) = q1<br>
+&#x3B4;(q1, c) = q0</p>
+<ul>
+<li>Visualiza&#xE7;&#xE3;o do AFD</li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_10_afd.jpg">
+</div>
+<ul>
+<li>An&#xE1;lise das cadeias reconhecidas</li>
+</ul>
+<p>Seguindo as regras de transi&#xE7;&#xE3;o do aut&#xF4;mato, a cadeia <code>abbca</code> &#xE9; reconhecida. J&#xE1; a cadeia <code>abaac</code> n&#xE3;o &#xE9; reconhecida, a mesma requer transi&#xE7;&#xF5;es que n&#xE3;o produzem transi&#xE7;&#xF5;es, o que leva o aut&#xF4;mato a n&#xE3;o ser finalizado.</p>
+<p>As configura&#xE7;&#xF5;es assumidas durante a leitura de cada uma das cadeias s&#xE3;o:</p>
+<ul>
+<li><code>abbca</code></li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_10_trace_accept.png">
+</div>
+<ul>
+<li><code>abaac</code></li>
+</ul>
+<p><em>Perceba que para esta cadeia, a fita de entrada n&#xE3;o &#xE9; inteiramente lida, j&#xE1; que o aut&#xF4;mato encontra uma transi&#xE7;&#xE3;o inv&#xE1;lida</em></p>
+<div align="center">
+    <img src="figuras/lista_2/exe_10_trace_reject.png">
+</div>
+<p><strong>8) Seja M um AFN com M = ({ q0, q1, q2 }, { 0, 1 }, &#x3B4;, q0, {q1}), com &#x3B4; sendo:</strong></p>
+<p>&#x3B4;(q0, 0) = {q0 , q1}<br>
+&#x3B4;(q1, 0) = {q2}<br>
+&#x3B4;(q2, 1) = {q2}<br>
+&#x3B4;(q0, 1) = {q1}<br>
+&#x3B4;(q1, 1) = {q2}</p>
+<p>Mostre 5 cadeias reconhecidas por M. Encontre o AFD equivalente</p>
+<ul>
+<li>Visualiza&#xE7;&#xE3;o do AFN</li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_11_afnd.jpg">
+</div>
+<ul>
+<li>Cadeias reconhecidas por <code>M</code></li>
+</ul>
+<ul>
+<li>000001</li>
+<li>0000001</li>
+<li>000000001</li>
+<li>00000000001</li>
+<li>001</li>
+<li>01</li>
+<li>0</li>
+</ul>
+<ul>
+<li>Transformando o AFN em AFD</li>
+</ul>
+<p>Para a transforma&#xE7;&#xE3;o a regra utilizada foi a de agrupamentos dos estados. Sendo definido como estado final, aquele grupo que possuir em sua componente ao menos um s&#xED;mbolo de estado final do AFN.</p>
+<p>A tabela abaixo foi utilizada para a realiza&#xE7;&#xE3;o da convers&#xE3;o. Do lado esquerdo o AFN e do lado direito seu correspondente em AFD</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Estados</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">Estados</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">q0</td>
+<td style="text-align:center">q0, q1</td>
+<td style="text-align:center">q1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q0}</td>
+<td style="text-align:center">{q0, q1}</td>
+<td style="text-align:center">{q1}</td>
+</tr>
+<tr>
+<td style="text-align:center">q1</td>
+<td style="text-align:center">q2</td>
+<td style="text-align:center">q2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q1}</td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center">{q2}</td>
+</tr>
+<tr>
+<td style="text-align:center">q2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">q2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q0, q1}</td>
+<td style="text-align:center">{q0, q1, q2}</td>
+<td style="text-align:center">{q1, q2}</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q2}</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q0, q1, q2}</td>
+<td style="text-align:center">{q0, q1, q2}</td>
+<td style="text-align:center">{q1, q2}</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q1, q2}</td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center">{q2}</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q1, q2}</td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center">{q2}</td>
+</tr>
+</tbody>
+</table>
+<p>Ao final deste processo, o seguinte AFD foi gerado</p>
+<div align="center">
+    <img src="figuras/lista_2/exe_11_afd.jpg">
+</div>
+<p>Para validar a convers&#xE3;o, o mesmo passo foi feito atrav&#xE9;s do JFlap, o resultado do mesmo &#xE9; apresentado abaixo.</p>
+<div align="center">
+    <img src="figuras/lista_2/exe_11_afd_jflap.jpg">
+</div>
+<p>&#xC9; poss&#xED;vel perceber a equival&#xEA;ncia entre os AFDs gerados, variando apenas na nomenclatura utilizada para os estados.</p>
+<p><strong>9) Seja M um AFN com M = ({ q0, q1, q2}, { 0, 1 }, &#x3B4;, q0, {q1}), com s sendo: &#x3B4;</strong></p>
+<p>&#x3B4;(q0, 0) = {q0}<br>
+&#x3B4;(q1, 0) = {q2}<br>
+&#x3B4;(q2, 0) = {q2}<br>
+&#x3B4;(q0, 1) = {q1}<br>
+&#x3B4;(q1, 1) = { q1, q2 }<br>
+&#x3B4;(q2, 1) = {q1}</p>
+<p>Mostre 5 cadeias reconhecidas por M. Encontre o AFD equivalente</p>
+<ul>
+<li>Visualiza&#xE7;&#xE3;o do AFN</li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_12_afnd.jpg">
+</div>
+<ul>
+<li>Cadeias reconhecidas por <code>M</code></li>
+</ul>
+<p>As cadeias reconhecidas pelo AFN <code>M</code> s&#xE3;o todas aquelas terminadas em 1</p>
+<ul>
+<li>00011100001</li>
+<li>0001</li>
+<li>0010101</li>
+<li>01</li>
+<li>00111101</li>
+<li>000011</li>
+</ul>
+<ul>
+<li>Transformando o AFN em AFD</li>
+</ul>
+<p>Para a realiza&#xE7;&#xE3;o da convers&#xE3;o a tabela apresentada abaixo foi utilizada, nessa o conceito de agrupamento de estados foi realizada.</p>
+<p>Na esquerda &#xE9; representado o AFN e na direita o AFD</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Estados</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">Estados</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">q0</td>
+<td style="text-align:center">q0</td>
+<td style="text-align:center">q1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q0}</td>
+<td style="text-align:center">{q0}</td>
+<td style="text-align:center">{q1}</td>
+</tr>
+<tr>
+<td style="text-align:center">q1</td>
+<td style="text-align:center">q2</td>
+<td style="text-align:center">q1, q2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q1}</td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center">{q1, q2}</td>
+</tr>
+<tr>
+<td style="text-align:center">q2</td>
+<td style="text-align:center">q2</td>
+<td style="text-align:center">q1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q1, q2}</td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center">{q1, q2}</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center">{q1}</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q0, q1, q2}</td>
+<td style="text-align:center">{q0, q1, q2}</td>
+<td style="text-align:center">{q1, q2}</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q1, q2}</td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center">{q2}</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">{q1, q2}</td>
+<td style="text-align:center">{q2}</td>
+<td style="text-align:center">{q2}</td>
+</tr>
+</tbody>
+</table>
+<p>O AFD apresentado na tabela pode ser visualizado no grafo abaixo.</p>
+<div align="center">
+    <img src="figuras/lista_2/exe_12_afd.jpg">
+</div>
+<p><strong>10) Construir um AFN que aceita a linguagem associada &#xE0;s seguintes ER:</strong></p>
+<ul>
+<li>a) r  = a* (a a + b b)</li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_13a_afnd.jff.jpg">
+</div>
+<ul>
+<li>b) r = (a + b)* (a + b b)</li>
+</ul>
+<p><em>Este aut&#xF4;mato precisa ser otimizado, mas por hora, ele &#xE9; capaz de interpretar a mesma cadeia que a express&#xE3;o regular representa</em></p>
+<div align="center">
+    <img src="figuras/lista_2/exe_13b_afnd.jpg">
+</div>
+<ul>
+<li>c) r = (a a) * (b b )* b</li>
+</ul>
+<div align="center">
+    <img src="figuras/lista_2/exe_13c_afnd.jpg">
+</div>
 <p><strong>Sobre os exerc&#xED;cios</strong>: Os exerc&#xED;cios presentes nesta p&#xE1;gina foram retirados das seguintes refer&#xEA;ncias:</p>
 <ul>
 <li><a href="http://www.din.uem.br/yandre/TC/lista3-resp.pdf">Lista de exerc&#xED;cios - UEM</a>;</li>
