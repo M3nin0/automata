@@ -359,7 +359,21 @@ Para a solução deste exercício a mesma lógica aplicada no exercício `a` foi
 
 - c) {w | w possui um número par de símbolos a}
 
+```
+((b+c+d+e)*a(b+c+d+e)*a(b+c+d+e)*)*
+```
 
+- d) {w | w é iniciada com o símbolo `a` e termina com o símbolo `b` ou `c`}
+
+```
+a(a+b+c+d+e)*(b+c)
+```
+
+- e) {w | w contem apenas os símbolos a, b, c com no mínimo um símbolo}
+
+```
+(a+b+c)*(a+b+c)(a+b+c)*
+```
 
 **Sobre os exercícios**: Os exercícios presentes nesta página foram retirados das seguintes referências:
 - [Lista de exercícios - UEM](http://www.din.uem.br/yandre/TC/lista3-resp.pdf);
