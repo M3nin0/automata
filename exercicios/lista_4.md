@@ -26,6 +26,44 @@ Bem, com os testes acima e interpretado as regras foi possível perceber que as 
     <img src="figuras/lista_4/exe_1a_mt_mp.png">
 </div>
 
+2) **Construa Máquinas de Turing que aceitem as linguagens**
+
+a) L = L(aba*b)
+
+M = ({q0, q1, q2, q3}, {a, b}, {a, b, $\square$}, P, q0, {q3}), sendo P:
+
+δ(q0, a) = (q2, $\square$, R),
+δ(q2, b) = (q1, $\square$, R),
+δ(q1, a) = (q1, $\square$, R),
+δ(q1, b) = (q3, $\square$, R), 
+
+Para validar a máquina criada, as regras foram postas no JFlap e validadas com múltiplas execuções.
+
+<div align="center">
+    <img src="figuras/lista_4/exe_2a_mt_mp.png">
+</div>
+
+b) L = { $1^n2^n$ | n ≥ 0 }
+
+M = ({q0, q1, q2, q3, q4}, {1, 2}, {1, 2, x, y, $\square$}, P, q0, {q4}), sendo P:
+
+δ(q0, 1) = (q1, x, R),
+δ(q1, 1) = (q1, 1, R),
+δ(q1, y) = (q1, y, R),
+δ(q1, 2) = (q2, y, L),
+δ(q2, 1) = (q2, 1, L),
+δ(q2, y) = (q2, y, L),
+δ(q2, x) = (q0, x, R),
+δ(q0, y) = (q3, y, R),
+δ(q3, y) = (q3, y, R),
+δ(q3, $\square$) = (q4, $\square$, R),
+
+A validação da máquina criada é apresentada abaixo
+
+<div align="center">
+    <img src="figuras/lista_4/exe_2b_mt_mp.png">
+</div>
+
 **Sobre os exercícios**: Os exercícios presentes nesta página foram retirados das seguintes referências:
 - [Lista de exercícios - UNESP](http://wwwp.fc.unesp.br/~simonedp/zipados/Lista-TC04.pdf)
 
