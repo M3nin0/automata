@@ -13,3 +13,4 @@ Discente:
 - [Lista 1 (Conceitos fundamentais)](https://automata-cap-241.netlify.com/lista_1.html) 
 - [Lista 2 (Linguagens regulares)](https://automata-cap-241.netlify.com/lista_2.html)
 - [Lista 3 (Linguagens livres de contexto)](https://automata-cap-241.netlify.com/lista_3.html)
+- [Lista 4 (Máquinas de Turing)](https://automata-cap-241.netlify.com/lista_4.html)
