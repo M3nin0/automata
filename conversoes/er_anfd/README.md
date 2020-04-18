@@ -6,10 +6,14 @@ Como já citado em outras partes deste repositório, os formalismos apresentados
 
 Abaixo é apresentado um resumo dos conceitos necessárias para a conversão de uma ER para um autômato finito.
 
-![](imagens/conversoes.svg)
+<div align="center">
+    <img src="imagens/conversoes.svg">
+</div>
 
 ### Exemplos de conversão
 
 Com base nas operações que foram apresentadas, algumas conversões de exemplo foram criadas, estas apresentadas abaixo.
 
-![](imagens/conversoes_exemplos.svg)
+<div align="center">
+    <img src="imagens/conversoes_exemplos.svg">
+</div>
