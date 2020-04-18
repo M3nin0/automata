@@ -1,5 +1,7 @@
 ## Automata λ - Conversões
 
+<!-- Inserir figuras de conversão equivalência de formalismos. -->
+
 Os diferentes formalismos apresentados durante a disciplina possuem equivalências. Assim, esta seção do repositório apresenta os principais conceitos de conversão entre formalismos aprendidos. 
 
 ##### Conteúdo
